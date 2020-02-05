@@ -17,6 +17,7 @@ export default {
 <style>
 @import url('./css/reset.css');
 #app {
-  box-sizing: border-box,
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 </style>

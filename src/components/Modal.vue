@@ -6,15 +6,20 @@
             </md-avatar>
             <span class="md-body-1">{{post.owner.firstName + ' ' + post.owner.lastName}}</span>
         </md-dialog-title>
-        <div class="content">
-            <hr>
-            <img :src="post.image" alt="post image">
-            <div class="message">
-                <div class="md-body-1">{{post.message}}</div>
-            </div>
+        <div 
+            class="content" 
+            :style="{
+                width: '728px', 
+                height: '100vh', 
+                backgroundImage: 'url('+post.image+')', 
+                backgroundRepeat: 'no-repeat', 
+                backgroundSize: '100%', 
+                backgroundPosition: 'center'
+            }">
         </div>
         <md-dialog-actions>
-          <md-button class="md-dense md-primary" @click="showModal = !showModal">Close</md-button>
+            <div class="md-body-1">{{post.message}}</div>
+          <md-button class="md-raised md-primary" @click="showModal = !showModal">Close</md-button>
         </md-dialog-actions>
       </md-dialog>
 </template>
@@ -43,8 +48,9 @@ export default {
     .content {
         display: flex;
         flex-direction: column;
-        padding: 20px;
         overflow-y: auto;
+        width: 100%;
+        height: 100%;
     }
     .content img {
         width: 100%;
@@ -59,8 +65,15 @@ export default {
     }
     .md-dialog {
         max-width: 768px;
+        z-index: 999;
     }
     .md-dialog .md-body-1 {
         margin-left: 20px;
+    }
+    .md-dialog-actions {
+        display: flex;
+        justify-content: space-between!important;
+        padding: 2px 5px!important;
+        width: 100%;
     }
 </style>
