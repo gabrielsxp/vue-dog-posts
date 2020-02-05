@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style>
+    * {
+       font-family: 'Roboto', sans-serif;
+    }
     .content {
         display: flex;
         flex-direction: column;
